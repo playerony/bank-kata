@@ -1,11 +1,6 @@
 import { AccountHistory } from "../../domain/models.js"
 import { MemoryStorage } from "../../domain/memory.storage.js"
-
-interface AccountController {
-  printStatement(): void
-  deposit(amount: number): void
-  withdraw(amount: number): void
-}
+import { AccountController } from "../../domain/account.controller.js"
 
 export const getAccountController = (memoryStorage: MemoryStorage<AccountHistory>): AccountController => ({
   deposit: (amount: number) => {
