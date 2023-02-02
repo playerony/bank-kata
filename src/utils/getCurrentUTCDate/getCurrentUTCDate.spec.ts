@@ -10,6 +10,6 @@ describe("getCurrentUTCDate function", () => {
     vi.useFakeTimers()
     vi.setSystemTime(new Date(2020, 3, 1))
 
-    expect(getCurrentUTCDate()).toEqual("2020-03-31")
+    expect(getCurrentUTCDate()).toEqual("2020-04-01")
   })
 })

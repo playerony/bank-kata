@@ -160,8 +160,8 @@ describe("getAccountController function", () => {
 
       expect(consoleLogMock).toHaveBeenCalledTimes(3)
       expect(consoleLogMock).toHaveBeenCalledWith("DATE | AMOUNT | BALANCE")
-      expect(consoleLogMock).toHaveBeenCalledWith("2020-03-31 | 100 | 100")
-      expect(consoleLogMock).toHaveBeenCalledWith("2020-03-31 | 300 | 400")
+      expect(consoleLogMock).toHaveBeenCalledWith("2020-04-01 | 100 | 100")
+      expect(consoleLogMock).toHaveBeenCalledWith("2020-04-01 | 300 | 400")
     })
   })
 
@@ -176,7 +176,7 @@ describe("getAccountController function", () => {
       expect(memoryStorage.putItem).toHaveBeenCalledWith({
         amount: -100,
         balance: -100,
-        date: "2020-03-31",
+        date: "2020-04-01",
       })
     })
 
@@ -187,7 +187,7 @@ describe("getAccountController function", () => {
           {
             amount: 100,
             balance: 100,
-            date: "2020-03-31",
+            date: "2020-04-01",
           },
         ] as AccountHistory[]),
       })
@@ -201,7 +201,7 @@ describe("getAccountController function", () => {
       expect(memoryStorage.putItem).toHaveBeenCalledWith({
         amount: -200,
         balance: -100,
-        date: "2020-03-31",
+        date: "2020-04-01",
       })
     })
 
@@ -219,8 +219,8 @@ describe("getAccountController function", () => {
 
       expect(consoleLogMock).toHaveBeenCalledTimes(3)
       expect(consoleLogMock).toHaveBeenNthCalledWith(1, "DATE | AMOUNT | BALANCE")
-      expect(consoleLogMock).toHaveBeenNthCalledWith(2, "2020-03-31 | 1000 | 1000")
-      expect(consoleLogMock).toHaveBeenNthCalledWith(3, "2020-03-31 | -300 | 700")
+      expect(consoleLogMock).toHaveBeenNthCalledWith(2, "2020-04-01 | 1000 | 1000")
+      expect(consoleLogMock).toHaveBeenNthCalledWith(3, "2020-04-01 | -300 | 700")
     })
   })
 })
