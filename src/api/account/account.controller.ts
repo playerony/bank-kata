@@ -1,6 +1,7 @@
 import { AccountHistory } from "../../domain/models.js"
 import { MemoryStorage } from "../../domain/memory.storage.js"
 import { AccountController } from "../../domain/account.controller.js"
+import { getCurrentUTCDate } from "../../utils/index.js"
 
 export const getAccountController = (memoryStorage: MemoryStorage<AccountHistory>): AccountController => ({
   deposit: (amount: number) => {
@@ -13,7 +14,7 @@ export const getAccountController = (memoryStorage: MemoryStorage<AccountHistory
     memoryStorage.putItem({
       amount,
       balance: newBalance,
-      date: new Date().toISOString().split("T")[0],
+      date: getCurrentUTCDate(),
     })
   },
   withdraw: (amount: number) => {
@@ -26,7 +27,7 @@ export const getAccountController = (memoryStorage: MemoryStorage<AccountHistory
     memoryStorage.putItem({
       amount: -amount,
       balance: newBalance,
-      date: new Date().toISOString().split("T")[0],
+      date: getCurrentUTCDate(),
     })
   },
   printStatement: () => {

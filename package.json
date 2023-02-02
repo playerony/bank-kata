@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rimraf coverage build tmp",
     "build": "tsc --project .",
-    "test": "vitest",
+    "test": "TZ=UTC vitest",
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
